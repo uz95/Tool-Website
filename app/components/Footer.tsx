@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col justify-between gap-6 md:flex-row">
           <div>
-            <h2 className="text-xl font-bold">QuickToolsHub</h2>
+            <h2 className="text-xl font-bold">FastWebToolsHub</h2>
             <p className="mt-2 max-w-md text-sm text-slate-400">
               Free online calculators, converters, AI tools, image tools, PDF
               tools, and text utilities.
@@ -31,7 +31,7 @@ export default function Footer() {
         </div>
 
         <p className="mt-8 text-sm text-slate-500">
-          © 2026 QuickToolsHub. All rights reserved.
+          © 2026 FastWebToolsHub All rights reserved.
         </p>
       </div>
     </footer>

@@ -4,9 +4,9 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "QuickToolsHub - Free Online Tools",
+  title: "FastWebToolsHub - Free Online Tools",
   description:
-    "Free online calculators, converters, AI tools, image tools, PDF tools, and text utilities.",
+    "Free online image tools, PDF tools, calculators, AI tools, and converters.",
 };
 
 export default function RootLayout({

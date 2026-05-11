@@ -2,10 +2,10 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-slate-950 px-6 py-16 text-white">
       <div className="mx-auto max-w-4xl">
-        <h1 className="text-4xl font-bold">About QuickToolsHub</h1>
+        <h1 className="text-4xl font-bold">About FastWebToolsHub</h1>
 
         <p className="mt-6 text-slate-300">
-          QuickToolsHub is a free online tools website built to help users
+          FastWebToolsHub is a free online tools website built to help users
           complete everyday digital tasks quickly and easily.
         </p>
 

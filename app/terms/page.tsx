@@ -5,7 +5,7 @@ export default function TermsPage() {
         <h1 className="text-4xl font-bold">Terms and Conditions</h1>
 
         <p className="mt-6 text-slate-300">
-          By using QuickToolsHub, you agree to these Terms and Conditions. If
+          By using FastWebToolsHub, you agree to these Terms and Conditions. If
           you do not agree, please do not use this website.
         </p>
 
@@ -42,7 +42,7 @@ export default function TermsPage() {
           <h2 className="text-2xl font-bold">Limitation of Liability</h2>
 
           <p className="mt-4 text-slate-300">
-            QuickToolsHub is not responsible for any loss, damage, or issue
+            FastWebToolsHub is not responsible for any loss, damage, or issue
             caused by using this website or relying on tool results.
           </p>
         </section>

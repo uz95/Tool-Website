@@ -3,7 +3,7 @@ export default function Navbar() {
     <header className="border-b border-slate-800 bg-slate-950">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 text-white">
         <a href="/" className="text-xl font-bold">
-          QuickToolsHub
+          FastWebToolsHub
         </a>
 
         <div className="flex gap-5 text-sm text-slate-300">
