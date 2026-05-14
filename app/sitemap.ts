@@ -52,5 +52,21 @@ export default function sitemap() {
       url: "https://www.fastwebtoolshub.com/tools/pdf-to-word",
       lastModified: new Date(),
     },
+    {
+  url: "https://www.fastwebtoolshub.com/tools/heic-to-jpg",
+  lastModified: new Date(),
+},
+{
+  url: "https://www.fastwebtoolshub.com/tools/image-resizer",
+  lastModified: new Date(),
+},
+{
+  url: "https://www.fastwebtoolshub.com/blog/webp-vs-png",
+  lastModified: new Date(),
+},
+{
+  url: "https://www.fastwebtoolshub.com/blog/how-to-resize-images-without-losing-quality",
+  lastModified: new Date(),
+},
   ];
 }
