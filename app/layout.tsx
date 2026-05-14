@@ -4,8 +4,11 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Script from "next/script";
 
-export const metadata: Metadata = {
+export const metadata = {
+  metadataBase: new URL("https://www.fastwebtoolshub.com"),
+
   title: "FastWebToolsHub - Free Online Tools",
+
   description:
     "Free online image tools, PDF tools, calculators, AI tools, and converters.",
 };

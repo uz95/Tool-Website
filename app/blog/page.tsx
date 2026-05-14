@@ -20,6 +20,20 @@ const posts = [
     href: "/blog/png-vs-webp",
     category: "Image Tools",
   },
+  {
+  title: "WEBP vs PNG: Which Image Format Is Better for Websites?",
+  description:
+    "Compare WEBP and PNG for quality, transparency, file size, and website speed.",
+  href: "/blog/webp-vs-png",
+  category: "Image Tools",
+},
+{
+  title: "How to Resize Images Without Losing Quality",
+  description:
+    "Learn how to resize images properly for websites, uploads, and social media.",
+  href: "/blog/how-to-resize-images-without-losing-quality",
+  category: "Image Tools",
+},
 ];
 
 export default function BlogPage() {

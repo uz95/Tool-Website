@@ -89,6 +89,18 @@ const tools = [
     category: "PDF Tool",
     href: "/tools/pdf-to-word",
   },
+  {
+  title: "HEIC to JPG Converter",
+  description: "Convert iPhone HEIC photos to JPG online.",
+  category: "Image Tool",
+  href: "/tools/heic-to-jpg",
+},
+{
+  title: "Image Resizer",
+  description: "Resize images online by width and height.",
+  category: "Image Tool",
+  href: "/tools/image-resizer",
+},
 ];
 
 export default function ToolsPage() {
