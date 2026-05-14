@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import heic2any from "heic2any";
 
 export default function HeicToJpgPage() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -28,31 +27,33 @@ export default function HeicToJpgPage() {
     setFileName(file.name.replace(/\.[^/.]+$/, ""));
   }
 
-  async function convertHeicToJpg() {
-    if (!selectedFile) return;
+async function convertHeicToJpg() {
+  if (!selectedFile) return;
 
-    setLoading(true);
+  setLoading(true);
 
-    try {
-      const convertedBlob = await heic2any({
-        blob: selectedFile,
-        toType: "image/jpeg",
-        quality: 0.95,
-      });
+  try {
+    const heic2any = (await import("heic2any")).default;
 
-      const blob = Array.isArray(convertedBlob)
-        ? convertedBlob[0]
-        : convertedBlob;
+    const convertedBlob = await heic2any({
+      blob: selectedFile,
+      toType: "image/jpeg",
+      quality: 0.95,
+    });
 
-      const imageUrl = URL.createObjectURL(blob);
-      setConvertedImage(imageUrl);
-    } catch (error) {
-      console.error(error);
-      alert("Something went wrong while converting the HEIC image.");
-    } finally {
-      setLoading(false);
-    }
+    const blob = Array.isArray(convertedBlob)
+      ? convertedBlob[0]
+      : convertedBlob;
+
+    const imageUrl = URL.createObjectURL(blob);
+    setConvertedImage(imageUrl);
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong while converting the HEIC image.");
+  } finally {
+    setLoading(false);
   }
+}
 
   return (
     <main className="min-h-screen bg-slate-950 px-6 py-16 text-white">
