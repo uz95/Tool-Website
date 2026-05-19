@@ -34,7 +34,35 @@ const posts = [
   href: "/blog/how-to-resize-images-without-losing-quality",
   category: "Image Tools",
 },
+{
+  title: "Best Image Format for Websites in 2026",
+  description:
+    "Learn which image format is best for website speed, SEO, and quality.",
+  href: "/blog/best-image-format-for-websites",
+  category: "Image SEO",
+},
+{
+  title: "How to Compress Images for Faster Websites",
+  description:
+    "Learn how image compression improves website speed, SEO, and user experience.",
+  href: "/blog/how-to-compress-images-for-faster-websites",
+  category: "Image Optimization",
+},
+{
+  title: "PNG vs JPG: Which Image Format Should You Use?",
+  description:
+    "Compare PNG and JPG for quality, file size, transparency, and SEO.",
+  href: "/blog/png-vs-jpg",
+  category: "Image Tools",
+},
 ];
+
+export const metadata = {
+  title: "Blog - FastWebToolsHub",
+  alternates: {
+    canonical: "https://www.fastwebtoolshub.com/blog",
+  },
+};
 
 export default function BlogPage() {
   return (

@@ -1,3 +1,10 @@
+export const metadata = {
+  title: "About - FastWebToolsHub",
+  alternates: {
+    canonical: "https://www.fastwebtoolshub.com/about",
+  },
+};
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-slate-950 px-6 py-16 text-white">

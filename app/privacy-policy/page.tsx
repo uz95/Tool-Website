@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Privacy Policy - FastWebToolsHub",
+  alternates: {
+    canonical: "https://www.fastwebtoolshub.com/privacy-policy",
+  },
+};
 export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen bg-slate-950 px-6 py-16 text-white">
@@ -6,7 +12,7 @@ export default function PrivacyPolicyPage() {
 
         <p className="mt-6 text-slate-300">
           Your privacy is important to us. This Privacy Policy explains how
-          QuickToolsHub collects, uses, and protects information when you use
+          FastWebToolsHub collects, uses, and protects information when you use
           our website.
         </p>
 
@@ -24,7 +30,7 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-2xl font-bold">Files and Tool Usage</h2>
 
           <p className="mt-4 text-slate-300">
-            Many tools on QuickToolsHub process files directly in your browser.
+            Many tools on FastWebToolsHub process files directly in your browser.
             We do not intentionally store or upload your files unless clearly
             stated for a specific feature.
           </p>

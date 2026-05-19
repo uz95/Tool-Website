@@ -101,6 +101,24 @@ const tools = [
   category: "Image Tool",
   href: "/tools/image-resizer",
 },
+{
+  title: "SVG to PNG Converter",
+  description: "Convert SVG files to PNG images online.",
+  category: "Image Tool",
+  href: "/tools/svg-to-png",
+},
+{
+  title: "Crop Image Online",
+  description: "Crop PNG, JPG, and other images online for free.",
+  category: "Image Tool",
+  href: "/tools/crop-image",
+},
+{
+  title: "Favicon Generator",
+  description: "Create a favicon from any image online for free.",
+  category: "Image Tool",
+  href: "/tools/favicon-generator",
+},
 ];
 
 export default function ToolsPage() {

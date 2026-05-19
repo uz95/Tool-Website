@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Terms - FastWebToolsHub",
+  alternates: {
+    canonical: "https://www.fastwebtoolshub.com/terms",
+  },
+};
 export default function TermsPage() {
   return (
     <main className="min-h-screen bg-slate-950 px-6 py-16 text-white">
