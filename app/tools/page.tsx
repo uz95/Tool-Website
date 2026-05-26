@@ -119,6 +119,24 @@ const tools = [
   category: "Image Tool",
   href: "/tools/favicon-generator",
 },
+{
+  title: "Rotate Image Online",
+  description: "Rotate JPG, PNG, and WEBP images online for free.",
+  category: "Image Tool",
+  href: "/tools/rotate-image",
+},
+{
+  title: "Blur Image Online",
+  description: "Blur photos and images online for free.",
+  category: "Image Tool",
+  href: "/tools/blur-image",
+},
+{
+  title: "Image to Base64 Converter",
+  description: "Convert images to Base64 code online for free.",
+  category: "Developer Tool",
+  href: "/tools/image-to-base64",
+},
 ];
 
 export default function ToolsPage() {

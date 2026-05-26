@@ -55,6 +55,27 @@ const posts = [
   href: "/blog/png-vs-jpg",
   category: "Image Tools",
 },
+{
+  title: "How to Rotate Images Online for Free",
+  description:
+    "Learn how to rotate JPG, PNG, and WEBP images online quickly and easily.",
+  href: "/blog/how-to-rotate-images-online",
+  category: "Image Editing",
+},
+{
+  title: "How to Blur Images Online Without Photoshop",
+  description:
+    "Blur photos and images online for free without using Photoshop or editing software.",
+  href: "/blog/how-to-blur-images-online",
+  category: "Image Editing",
+},
+{
+  title: "What Is Base64 Image Encoding?",
+  description:
+    "Learn what Base64 image encoding is and how developers use Base64 images in HTML and CSS.",
+  href: "/blog/what-is-base64-image",
+  category: "Developer Tools",
+},
 ];
 
 export const metadata = {
