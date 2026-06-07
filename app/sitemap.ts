@@ -172,5 +172,21 @@ export default function sitemap() {
       url: "https://www.fastwebtoolshub.com/blog/what-is-base64-image",
       lastModified: new Date(),
     },
+    {
+  url: "https://www.fastwebtoolshub.com/tools/image-tools",
+  lastModified: new Date(),
+},
+{
+  url: "https://www.fastwebtoolshub.com/tools/pdf-tools",
+  lastModified: new Date(),
+},
+{
+  url: "https://www.fastwebtoolshub.com/tools/ai-tools",
+  lastModified: new Date(),
+},
+{
+  url: "https://www.fastwebtoolshub.com/tools/calculators",
+  lastModified: new Date(),
+},
   ];
 }

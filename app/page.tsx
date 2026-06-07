@@ -1,3 +1,25 @@
+const categories = [
+  {
+    title: "Image Tools",
+    description: "Convert, resize, compress, crop, rotate, and edit images.",
+    href: "/tools/image-tools",
+  },
+  {
+    title: "PDF Tools",
+    description: "Convert PDFs, images, and documents online.",
+    href: "/tools/pdf-tools",
+  },
+  {
+    title: "AI Tools",
+    description: "Generate bios, captions, and AI-powered content.",
+    href: "/tools/ai-tools",
+  },
+  {
+    title: "Calculators",
+    description: "Free calculators for students, creators, and everyday use.",
+    href: "/tools/calculators",
+  },
+];
 const tools = [
   {
     title: "Age Calculator",
@@ -58,12 +80,6 @@ const tools = [
   description: "Estimate YouTube earnings from views and RPM.",
   category: "Creator Tool",
   href: "/tools/youtube-money-calculator",
-},
-{
-  title: "AI Bio Generator",
-  description: "Generate Instagram, LinkedIn, and professional bios.",
-  category: "AI Tool",
-  href: "/tools/ai-bio-generator",
 },
 {
   title: "AI Caption Generator",
@@ -193,6 +209,37 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="mx-auto max-w-7xl px-6 pb-20">
+  <div className="mb-10 text-center">
+    <h2 className="text-3xl font-bold">Browse by Category</h2>
+
+    <p className="mt-3 text-slate-400">
+      Find the right tools faster by category.
+    </p>
+  </div>
+
+  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    {categories.map((category) => (
+      <a
+        key={category.href}
+        href={category.href}
+        className="rounded-2xl border border-cyan-400/20 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-cyan-400"
+      >
+        <h3 className="text-xl font-bold text-cyan-400">
+          {category.title}
+        </h3>
+
+        <p className="mt-3 text-slate-400">
+          {category.description}
+        </p>
+
+        <div className="mt-5 text-sm font-semibold text-cyan-400">
+          Explore →
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
 
       <section id="tools" className="mx-auto max-w-7xl px-6 pb-20">
         <div className="mb-10 flex items-end justify-between">
@@ -208,7 +255,7 @@ export default function Home() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {tools.map((tool) => (
+          {tools.slice(0, 9).map((tool) => (
             <a
               key={tool.title}
               href={tool.href}
@@ -223,6 +270,63 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <section className="mx-auto max-w-7xl px-6 py-20">
+  <div className="text-center">
+    <h2 className="text-3xl font-bold">
+      Why Choose FastWebToolsHub?
+    </h2>
+
+    <p className="mx-auto mt-4 max-w-3xl text-slate-300">
+      FastWebToolsHub provides free online tools for image editing,
+      PDF conversion, AI content generation, calculators, and
+      productivity tasks. All tools work directly in your browser
+      without software installation.
+    </p>
+  </div>
+
+  <div className="mt-12 grid gap-6 md:grid-cols-3">
+    <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+      <h3 className="text-xl font-bold">Free to Use</h3>
+      <p className="mt-3 text-slate-400">
+        Access all tools without registration.
+      </p>
+    </div>
+
+    <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+      <h3 className="text-xl font-bold">Fast Processing</h3>
+      <p className="mt-3 text-slate-400">
+        Most tools work instantly in your browser.
+      </p>
+    </div>
+
+    <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+      <h3 className="text-xl font-bold">Privacy Friendly</h3>
+      <p className="mt-3 text-slate-400">
+        Your files remain on your device whenever possible.
+      </p>
+    </div>
+  </div>
+</section>
+<section className="mx-auto max-w-5xl px-6 pb-24">
+  <h2 className="text-3xl font-bold">
+    Free Online Tools for Everyday Tasks
+  </h2>
+
+  <p className="mt-6 text-slate-300">
+    FastWebToolsHub offers a growing collection of free online tools
+    including image converters, PDF tools, AI generators,
+    calculators, and productivity utilities. Whether you need to
+    convert WEBP to PNG, resize images, compress files, generate AI
+    captions, calculate percentages, or create PDFs, our tools help
+    you complete tasks quickly and efficiently.
+  </p>
+
+  <p className="mt-4 text-slate-300">
+    We regularly add new tools and educational guides to help
+    students, creators, developers, freelancers, marketers, and
+    everyday users work smarter online.
+  </p>
+</section>
 
       
     </main>

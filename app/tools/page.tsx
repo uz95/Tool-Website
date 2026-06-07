@@ -1,3 +1,26 @@
+const categories = [
+  {
+    title: "Image Tools",
+    description: "Convert, compress, resize, crop, rotate, blur, and edit images.",
+    href: "/tools/image-tools",
+  },
+  {
+    title: "PDF Tools",
+    description: "Convert and manage PDF files online.",
+    href: "/tools/pdf-tools",
+  },
+  {
+    title: "AI Tools",
+    description: "Generate bios, captions, and AI writing content.",
+    href: "/tools/ai-tools",
+  },
+  {
+    title: "Calculators",
+    description: "Use free online calculators for daily tasks.",
+    href: "/tools/calculators",
+  },
+];
+
 const tools = [
   {
     title: "Age Calculator",
@@ -143,7 +166,30 @@ export default function ToolsPage() {
   return (
     <main className="min-h-screen bg-slate-950 px-6 py-16 text-white">
       <div className="mx-auto max-w-7xl">
-        <h1 className="text-5xl font-bold">All Tools</h1>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+  {categories.map((category) => (
+    <a
+      key={category.href}
+      href={category.href}
+      className="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 p-6 transition hover:-translate-y-1 hover:border-cyan-400"
+    >
+      <h2 className="text-xl font-bold text-cyan-400">
+        {category.title}
+      </h2>
+
+      <p className="mt-3 text-sm text-slate-300">
+        {category.description}
+      </p>
+
+      <div className="mt-5 text-sm font-semibold text-cyan-400">
+        View Category →
+      </div>
+    </a>
+  ))}
+</div>
+
+<h2 className="mt-16 text-3xl font-bold">All Tools</h2>
+      
 
         <p className="mt-5 max-w-3xl text-lg text-slate-300">
           Explore free online calculators, PDF tools, AI tools,
