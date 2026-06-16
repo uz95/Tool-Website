@@ -1,201 +1,111 @@
-"use client";
+import PngToWebpClient from "./PngToWebpClient";
 
-import { useState } from "react";
+export const metadata = {
+  title: "PNG to WEBP Converter Free - Convert PNG to WEBP Online",
+  description:
+    "Convert PNG to WEBP online for free. Reduce PNG image size and create high-quality WEBP images directly in your browser without uploading files.",
+  alternates: {
+    canonical: "https://www.fastwebtoolshub.com/tools/png-to-webp",
+  },
+};
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do I convert PNG to WEBP online?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Upload your PNG image and the tool will convert it to WEBP directly in your browser.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is this PNG to WEBP converter free?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, this online PNG to WEBP converter is completely free to use.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does WEBP reduce image size?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, WEBP usually creates smaller image files than PNG while keeping good visual quality.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are my images uploaded to a server?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Image conversion happens directly inside your browser.",
+      },
+    },
+  ],
+};
 
-export default function PngToWebpPage() {
-  const [preview, setPreview] = useState("");
-  const [convertedImage, setConvertedImage] = useState("");
-  const [fileName, setFileName] = useState("");
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "PNG to WEBP Converter",
+  applicationCategory: "MultimediaApplication",
+  operatingSystem: "Any",
+  url: "https://www.fastwebtoolshub.com/tools/png-to-webp",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+};
 
-  function handleFileChange(
-    e: React.ChangeEvent<HTMLInputElement>
-  ) {
-    const file = e.target.files?.[0];
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.fastwebtoolshub.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Image Tools",
+      item: "https://www.fastwebtoolshub.com/tools/image-tools",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "PNG to WEBP Converter",
+      item: "https://www.fastwebtoolshub.com/tools/png-to-webp",
+    },
+  ],
+};
 
-    if (!file) return;
-
-    if (!file.type.includes("png")) {
-      alert("Please upload a PNG image.");
-      return;
-    }
-
-    setFileName(file.name.replace(/\.[^/.]+$/, ""));
-    setPreview(URL.createObjectURL(file));
-
-    convertToWebp(file);
-  }
-
-  function convertToWebp(file: File) {
-    const reader = new FileReader();
-
-    reader.readAsDataURL(file);
-
-    reader.onload = (event) => {
-      const img = new Image();
-
-      img.src = event.target?.result as string;
-
-      img.onload = () => {
-        const canvas = document.createElement("canvas");
-
-        const ctx = canvas.getContext("2d");
-
-        if (!ctx) return;
-
-        canvas.width = img.width;
-        canvas.height = img.height;
-
-        ctx.drawImage(img, 0, 0);
-
-        // High quality WEBP
-        const webpData = canvas.toDataURL(
-          "image/webp",
-          0.95
-        );
-
-        setConvertedImage(webpData);
-      };
-    };
-  }
-
+export default function Page() {
   return (
-    <main className="min-h-screen bg-slate-950 px-6 py-16 text-white">
-      <div className="mx-auto max-w-5xl">
-        <a href="/tools" className="text-cyan-400">
-          ← Back to Tools
-        </a>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
-        <h1 className="mt-8 text-4xl font-bold">
-          PNG to WEBP Converter
-        </h1>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
 
-        <p className="mt-4 max-w-3xl text-slate-300">
-          Convert PNG images to WEBP online for free.
-          Reduce image size while keeping high quality.
-        </p>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
-        <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900 p-6">
-          <label className="block text-sm font-medium text-slate-300">
-            Upload PNG Image
-          </label>
-
-          <input
-            type="file"
-            accept="image/png"
-            onChange={handleFileChange}
-            className="mt-3 w-full rounded-xl border border-slate-700 bg-slate-950 p-4 text-white"
-          />
-
-          {preview && (
-            <div className="mt-8 grid gap-8 md:grid-cols-2">
-              <div>
-                <h2 className="mb-4 text-xl font-bold">
-                  Original PNG
-                </h2>
-
-                <img
-                  src={preview}
-                  alt="Original PNG"
-                  className="rounded-2xl"
-                />
-              </div>
-
-              <div>
-                <h2 className="mb-4 text-xl font-bold">
-                  Converted WEBP
-                </h2>
-
-                {convertedImage ? (
-                  <>
-                    <img
-                      src={convertedImage}
-                      alt="Converted WEBP"
-                      className="rounded-2xl"
-                    />
-
-                    <a
-                      href={convertedImage}
-                      download={`${fileName || "converted-image"}.webp`}
-                      className="mt-5 inline-block rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 hover:bg-cyan-300"
-                    >
-                      Download WEBP
-                    </a>
-                  </>
-                ) : (
-                  <div className="rounded-2xl border border-dashed border-slate-700 p-10 text-center text-slate-400">
-                    Converted WEBP will appear here
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-        </div>
-
-        <section className="mt-12">
-          <h2 className="text-2xl font-bold">
-            Why Convert PNG to WEBP?
-          </h2>
-
-          <p className="mt-4 text-slate-300">
-            WEBP images are smaller in size compared
-            to PNG while maintaining excellent quality.
-            This helps websites load faster and improves SEO.
-          </p>
-        </section>
-
-        <section className="mt-10">
-          <h2 className="text-2xl font-bold">
-            Benefits of WEBP
-          </h2>
-
-          <ul className="mt-4 space-y-3 text-slate-300">
-            <li>• Faster website loading</li>
-            <li>• Smaller file sizes</li>
-            <li>• Better SEO performance</li>
-            <li>• High image quality</li>
-            <li>• Modern web optimization</li>
-          </ul>
-        </section>
-
-        <section className="mt-10">
-          <h2 className="text-2xl font-bold">FAQ</h2>
-
-          <div className="mt-5 space-y-5">
-            <div>
-              <h3 className="font-semibold">
-                Is this PNG to WEBP converter free?
-              </h3>
-
-              <p className="mt-2 text-slate-300">
-                Yes, this converter is completely free.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold">
-                Does WEBP reduce image quality?
-              </h3>
-
-              <p className="mt-2 text-slate-300">
-                WEBP maintains very high image quality
-                while reducing file size.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold">
-                Is WEBP good for websites?
-              </h3>
-
-              <p className="mt-2 text-slate-300">
-                Yes, WEBP is excellent for improving
-                website speed and SEO.
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
+      <PngToWebpClient />
+    </>
   );
 }

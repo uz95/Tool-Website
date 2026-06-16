@@ -1,113 +1,111 @@
-"use client";
+import ImageToBase64Client from "./ImageToBase64Client";
 
-import { useState } from "react";
+export const metadata = {
+  title: "Image to Base64 Converter - Convert Images to Base64 Online",
+  description:
+    "Convert JPG, PNG, SVG, WEBP and GIF images to Base64 online. Generate Base64 strings and Data URLs for HTML, CSS, email templates and web development.",
+  alternates: {
+    canonical: "https://www.fastwebtoolshub.com/tools/image-to-base64",
+  },
+};
 
-export default function ImageToBase64Page() {
-  const [base64, setBase64] = useState("");
-  const [preview, setPreview] = useState("");
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do I convert an image to Base64?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Upload your image and the tool will instantly generate a Base64 string and Data URL that you can copy or download.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I convert PNG and JPG images to Base64?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, this tool supports PNG, JPG, WEBP, SVG, GIF and other browser-supported image formats.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a Base64 image Data URL?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A Base64 image Data URL is text that starts with data:image and contains the encoded image data for use in HTML, CSS, JavaScript or email templates.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are my images uploaded to a server?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. The image is processed directly inside your browser.",
+      },
+    },
+  ],
+};
 
-  function handleUpload(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0];
-    if (!file) return;
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Image to Base64 Converter",
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "Any",
+  url: "https://www.fastwebtoolshub.com/tools/image-to-base64",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+};
 
-    if (!file.type.startsWith("image/")) {
-      alert("Please upload an image file.");
-      return;
-    }
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.fastwebtoolshub.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Image Tools",
+      item: "https://www.fastwebtoolshub.com/tools/image-tools",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Image to Base64 Converter",
+      item: "https://www.fastwebtoolshub.com/tools/image-to-base64",
+    },
+  ],
+};
 
-    setPreview(URL.createObjectURL(file));
-
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      setBase64(reader.result as string);
-    };
-
-    reader.readAsDataURL(file);
-  }
-
-  function copyBase64() {
-    navigator.clipboard.writeText(base64);
-  }
-
-  function clearAll() {
-    setBase64("");
-    setPreview("");
-  }
-
+export default function Page() {
   return (
-    <main className="min-h-screen bg-slate-950 px-6 py-16 text-white">
-      <div className="mx-auto max-w-5xl">
-        <a href="/tools" className="text-cyan-400">← Back to Tools</a>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
-        <h1 className="mt-8 text-4xl font-bold">Image to Base64 Converter</h1>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
 
-        <p className="mt-4 max-w-3xl text-slate-300">
-          Convert JPG, PNG, WEBP, SVG, and other images to Base64 online for
-          free. Useful for developers, HTML, CSS, and inline image embedding.
-        </p>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
-        <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900 p-6">
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleUpload}
-            className="w-full rounded-xl border border-slate-700 bg-slate-950 p-4"
-          />
-
-          {preview && (
-            <div className="mt-8">
-              <h2 className="mb-4 text-xl font-bold">Image Preview</h2>
-              <img src={preview} alt="Uploaded image" className="max-h-80 rounded-2xl" />
-            </div>
-          )}
-
-          {base64 && (
-            <>
-              <textarea
-                value={base64}
-                readOnly
-                className="mt-8 h-64 w-full rounded-xl border border-slate-700 bg-slate-950 p-4 text-sm text-slate-300"
-              />
-
-              <div className="mt-6 flex flex-col gap-4 sm:flex-row">
-                <button
-                  onClick={copyBase64}
-                  className="rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950"
-                >
-                  Copy Base64
-                </button>
-
-                <button
-                  onClick={clearAll}
-                  className="rounded-xl border border-slate-700 px-6 py-3 font-semibold"
-                >
-                  Clear All
-                </button>
-              </div>
-            </>
-          )}
-        </div>
-
-        <section className="mt-12">
-          <h2 className="text-2xl font-bold">What Is Image to Base64?</h2>
-          <p className="mt-4 text-slate-300">
-            Image to Base64 conversion turns an image file into a text-based
-            data URL. Developers use Base64 images in HTML, CSS, email templates,
-            and small embedded assets.
-          </p>
-        </section>
-
-        <section className="mt-10">
-          <h2 className="text-2xl font-bold">When Should You Use Base64 Images?</h2>
-          <ul className="mt-4 space-y-3 text-slate-300">
-            <li>• Embedding small images directly in HTML</li>
-            <li>• Using icons in CSS</li>
-            <li>• Creating email templates</li>
-            <li>• Avoiding extra image file requests for tiny assets</li>
-          </ul>
-        </section>
-      </div>
-    </main>
+      <ImageToBase64Client />
+    </>
   );
 }

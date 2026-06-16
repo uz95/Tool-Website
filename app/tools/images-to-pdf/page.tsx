@@ -1,146 +1,189 @@
-"use client";
+import type { Metadata } from "next";
+import ImagesToPdfClient from "./ImagesToPdfClient";
 
-import { useState } from "react";
-import jsPDF from "jspdf";
+const siteUrl = "https://yourdomain.com";
+const pageUrl = `${siteUrl}/tools/images-to-pdf`;
 
-type PreviewImage = {
-  url: string;
-  file: File;
+export const metadata: Metadata = {
+  title: "Images to PDF Converter Online - Free JPG PNG WEBP to PDF",
+  description:
+    "Convert JPG, PNG, WEBP, photos, screenshots, and scanned images into one PDF online for free. Private browser-based images to PDF converter.",
+  keywords: [
+    "images to pdf converter online",
+    "convert images to pdf",
+    "combine images into pdf",
+    "multiple images to pdf",
+    "jpg to pdf",
+    "png to pdf",
+    "webp to pdf",
+    "photo to pdf converter",
+    "image to pdf without upload",
+    "merge images into pdf online",
+  ],
+  alternates: {
+    canonical: "/tools/images-to-pdf",
+  },
+  openGraph: {
+    title: "Images to PDF Converter Online",
+    description:
+      "Convert multiple images into one PDF file online for free. Works with JPG, PNG, WEBP, screenshots, and photos.",
+    url: pageUrl,
+    type: "website",
+  },
 };
 
 export default function ImagesToPdfPage() {
-  const [images, setImages] = useState<PreviewImage[]>([]);
+  const softwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Images to PDF Converter",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    url: pageUrl,
+    description:
+      "Free online images to PDF converter for JPG, PNG, WEBP, photos, screenshots, scanned pages, and multiple image files.",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+  };
 
-  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const files = Array.from(e.target.files || []);
+  const webApplicationSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Images to PDF Converter Online",
+    url: pageUrl,
+    applicationCategory: "UtilityApplication",
+    operatingSystem: "Any",
+    browserRequirements: "Requires JavaScript",
+    description:
+      "Convert multiple images into one PDF file directly in your browser.",
+  };
 
-    const imageFiles = files.filter((file) => file.type.startsWith("image/"));
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Tools",
+        item: `${siteUrl}/tools`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Images to PDF Converter",
+        item: pageUrl,
+      },
+    ],
+  };
 
-    const previews = imageFiles.map((file) => ({
-      file,
-      url: URL.createObjectURL(file),
-    }));
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to Convert Images to PDF Online",
+    description:
+      "Upload images, preview them, convert them, and download one PDF file.",
+    step: [
+      {
+        "@type": "HowToStep",
+        name: "Upload images",
+        text: "Choose JPG, PNG, WEBP, or other image files from your device.",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Preview selected images",
+        text: "Check the uploaded images before creating the PDF.",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Convert images to PDF",
+        text: "Click the convert button to generate your PDF file.",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Download PDF",
+        text: "Download the final combined PDF file instantly.",
+      },
+    ],
+  };
 
-    setImages(previews);
-  }
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Is this images to PDF converter free?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, this images to PDF converter is free to use.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I convert multiple images into one PDF?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, you can upload multiple images and combine them into one PDF file.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are my images uploaded to a server?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No, the PDF is created directly in your browser.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Which image formats are supported?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The tool supports JPG, PNG, WEBP, and most image formats supported by your browser.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I use this tool on mobile?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, the images to PDF converter works on mobile, tablet, and desktop browsers.",
+        },
+      },
+    ],
+  };
 
-  function createPdf() {
-    if (images.length === 0) {
-      alert("Please upload at least one image.");
-      return;
-    }
-
-    const pdf = new jsPDF("p", "mm", "a4");
-    const pageWidth = pdf.internal.pageSize.getWidth();
-    const pageHeight = pdf.internal.pageSize.getHeight();
-
-    images.forEach((image, index) => {
-      if (index > 0) {
-        pdf.addPage();
-      }
-
-      pdf.addImage(image.url, "JPEG", 10, 10, pageWidth - 20, pageHeight - 20);
-    });
-
-    pdf.save("converted-images.pdf");
-  }
+  const schemas = [
+    softwareSchema,
+    webApplicationSchema,
+    breadcrumbSchema,
+    howToSchema,
+    faqSchema,
+  ];
 
   return (
-    <main className="min-h-screen bg-slate-950 px-6 py-16 text-white">
-      <div className="mx-auto max-w-5xl">
-        <a href="/tools" className="text-cyan-400">
-          ← Back to Tools
-        </a>
+    <>
+      {schemas.map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
+        />
+      ))}
 
-        <h1 className="mt-8 text-4xl font-bold">Images to PDF Converter</h1>
-
-        <p className="mt-4 max-w-3xl text-slate-300">
-          Convert JPG, PNG, WEBP, and other images into a PDF file online for
-          free.
-        </p>
-
-        <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900 p-6">
-          <label className="block text-sm font-medium text-slate-300">
-            Upload Images
-          </label>
-
-          <input
-            type="file"
-            accept="image/*"
-            multiple
-            onChange={handleFileChange}
-            className="mt-3 w-full rounded-xl border border-slate-700 bg-slate-950 p-4 text-white"
-          />
-
-          {images.length > 0 && (
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-              {images.map((image, index) => (
-                <div key={index} className="rounded-xl bg-slate-950 p-3">
-                  <img
-                    src={image.url}
-                    alt={`Uploaded image ${index + 1}`}
-                    className="h-48 w-full rounded-lg object-cover"
-                  />
-
-                  <p className="mt-3 truncate text-sm text-slate-400">
-                    {image.file.name}
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
-
-          <button
-            onClick={createPdf}
-            disabled={images.length === 0}
-            className="mt-6 rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            Convert Images to PDF
-          </button>
-        </div>
-
-        <section className="mt-12">
-          <h2 className="text-2xl font-bold">Why Convert Images to PDF?</h2>
-
-          <p className="mt-4 text-slate-300">
-            Converting images to PDF is useful for documents, assignments,
-            receipts, scanned pages, portfolios, and sharing multiple images in
-            one file.
-          </p>
-        </section>
-
-        <section className="mt-10">
-          <h2 className="text-2xl font-bold">How to Use This Tool</h2>
-
-          <ol className="mt-4 list-decimal space-y-3 pl-6 text-slate-300">
-            <li>Upload one or more images.</li>
-            <li>Preview the selected images.</li>
-            <li>Click the convert button to download your PDF.</li>
-          </ol>
-        </section>
-
-        <section className="mt-10">
-          <h2 className="text-2xl font-bold">FAQ</h2>
-
-          <div className="mt-5 space-y-5">
-            <div>
-              <h3 className="font-semibold">
-                Is this images to PDF converter free?
-              </h3>
-              <p className="mt-2 text-slate-300">
-                Yes, this tool is completely free to use.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold">Are my images uploaded?</h3>
-              <p className="mt-2 text-slate-300">
-                No, the PDF is created directly in your browser.
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
+      <ImagesToPdfClient />
+    </>
   );
 }
