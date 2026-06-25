@@ -1,170 +1,119 @@
-"use client";
+import WebpToPngClient from "./WebpToPngClient";
 
-import { useState } from "react";
+export const metadata = {
+  title: "WEBP to PNG Converter Free - Convert WEBP Images Online",
+  description:
+    "Convert WEBP to PNG online for free. Upload a WEBP image and download a high-quality PNG file directly in your browser without uploading files.",
+  alternates: {
+    canonical: "https://www.fastwebtoolshub.com/tools/webp-to-png",
+  },
+};
 
-export default function WebpToPngPage() {
-  const [preview, setPreview] = useState("");
-  const [convertedImage, setConvertedImage] = useState("");
-  const [fileName, setFileName] = useState("");
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do I convert WEBP to PNG online?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Upload your WEBP image and the tool will convert it to PNG directly in your browser.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is this WEBP to PNG converter free?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, this online WEBP to PNG converter is completely free to use.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I convert WEBP to PNG without uploading files?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. The conversion happens directly inside your browser, so your image is not uploaded to a server.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does PNG support transparency?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, PNG supports transparency, which makes it useful for editing, graphics, icons, and design work.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I use PNG images in Photoshop?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, PNG files are widely supported by image editors such as Photoshop, design tools, websites, and apps.",
+      },
+    },
+  ],
+};
 
-  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0];
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "WEBP to PNG Converter",
+  applicationCategory: "MultimediaApplication",
+  operatingSystem: "Any",
+  url: "https://www.fastwebtoolshub.com/tools/webp-to-png",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+};
 
-    if (!file) return;
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.fastwebtoolshub.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Image Tools",
+      item: "https://www.fastwebtoolshub.com/tools/image-tools",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "WEBP to PNG Converter",
+      item: "https://www.fastwebtoolshub.com/tools/webp-to-png",
+    },
+  ],
+};
 
-    if (!file.type.includes("webp")) {
-      alert("Please upload a WEBP image.");
-      return;
-    }
-
-    setFileName(file.name.replace(/\.[^/.]+$/, ""));
-    setPreview(URL.createObjectURL(file));
-    convertWebpToPng(file);
-  }
-
-  function convertWebpToPng(file: File) {
-    const reader = new FileReader();
-
-    reader.readAsDataURL(file);
-
-    reader.onload = (event) => {
-      const img = new Image();
-      img.src = event.target?.result as string;
-
-      img.onload = () => {
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-
-        if (!ctx) return;
-
-        canvas.width = img.width;
-        canvas.height = img.height;
-
-        ctx.drawImage(img, 0, 0);
-
-        const pngData = canvas.toDataURL("image/png");
-        setConvertedImage(pngData);
-      };
-    };
-  }
-
+export default function Page() {
   return (
-    <main className="min-h-screen bg-slate-950 px-6 py-16 text-white">
-      <div className="mx-auto max-w-5xl">
-        <a href="/tools" className="text-cyan-400">
-          ← Back to Tools
-        </a>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
-        <h1 className="mt-8 text-4xl font-bold">
-          WEBP to PNG Converter
-        </h1>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
 
-        <p className="mt-4 max-w-3xl text-slate-300">
-          Convert WEBP images to PNG online for free. Upload your WEBP file and
-          download a high-quality PNG image instantly.
-        </p>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
-        <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900 p-6">
-          <label className="block text-sm font-medium text-slate-300">
-            Upload WEBP Image
-          </label>
-
-          <input
-            type="file"
-            accept="image/webp"
-            onChange={handleFileChange}
-            className="mt-3 w-full rounded-xl border border-slate-700 bg-slate-950 p-4 text-white"
-          />
-
-          {preview && (
-            <div className="mt-8 grid gap-8 md:grid-cols-2">
-              <div>
-                <h2 className="mb-4 text-xl font-bold">Original WEBP</h2>
-
-                <img
-                  src={preview}
-                  alt="Original WEBP preview"
-                  className="rounded-2xl"
-                />
-              </div>
-
-              <div>
-                <h2 className="mb-4 text-xl font-bold">Converted PNG</h2>
-
-                {convertedImage ? (
-                  <>
-                    <img
-                      src={convertedImage}
-                      alt="Converted PNG preview"
-                      className="rounded-2xl"
-                    />
-
-                    <a
-                      href={convertedImage}
-                      download={`${fileName || "converted-image"}.png`}
-                      className="mt-5 inline-block rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 hover:bg-cyan-300"
-                    >
-                      Download PNG
-                    </a>
-                  </>
-                ) : (
-                  <div className="rounded-2xl border border-dashed border-slate-700 p-10 text-center text-slate-400">
-                    Converted PNG will appear here
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-        </div>
-
-        <section className="mt-12">
-          <h2 className="text-2xl font-bold">Why Convert WEBP to PNG?</h2>
-
-          <p className="mt-4 text-slate-300">
-            WEBP is a modern image format, but some apps, editors, and websites
-            may not fully support it. PNG is widely supported and is useful for
-            editing, design work, and transparent images.
-          </p>
-        </section>
-
-        <section className="mt-10">
-          <h2 className="text-2xl font-bold">How to Use This WEBP to PNG Tool</h2>
-
-          <ol className="mt-4 list-decimal space-y-3 pl-6 text-slate-300">
-            <li>Upload your WEBP image.</li>
-            <li>The tool converts it to PNG inside your browser.</li>
-            <li>Click the download button to save your PNG image.</li>
-          </ol>
-        </section>
-
-        <section className="mt-10">
-          <h2 className="text-2xl font-bold">FAQ</h2>
-
-          <div className="mt-5 space-y-5">
-            <div>
-              <h3 className="font-semibold">Is this WEBP to PNG converter free?</h3>
-              <p className="mt-2 text-slate-300">
-                Yes, this online WEBP to PNG converter is completely free.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold">Does this tool reduce image quality?</h3>
-              <p className="mt-2 text-slate-300">
-                No, the image is converted to PNG while keeping high visual
-                quality.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold">Are my images uploaded to a server?</h3>
-              <p className="mt-2 text-slate-300">
-                No, the conversion happens directly in your browser.
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
+      <WebpToPngClient />
+    </>
   );
 }
