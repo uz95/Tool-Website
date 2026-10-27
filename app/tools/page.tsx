@@ -22,6 +22,7 @@ const categories = [
 ];
 
 const tools = [
+  { title: "Text Case Converter", description: "Convert uppercase, lowercase, sentence case and title case.", category: "Text Tool", href: "/tools/text-case-converter" },
   {
     title: "Age Calculator",
     description: "Calculate age from date of birth instantly.",

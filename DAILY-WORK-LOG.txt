@@ -1,0 +1,21 @@
+FASTWEBTOOLSHUB DAILY WORK LOG
+
+2026-10-27 - First update merged into the actual project
+- Added /tools/text-case-converter: browser-based sentence/title/upper/lower case conversion, copy/clear actions, Unicode support, input limit and documented limitations.
+- Added /blog/how-to-change-text-case with practical examples and proofreading guidance.
+- Linked both pages from the existing tool/blog listings.
+- Added scripts/generate-sitemap.mjs and npm prebuild to include static pages automatically. All 48 current static pages are included; unverified modification timestamps are omitted. Dynamic routes need explicit generator support.
+- Validation: production build passed in this actual project; 14 conversion checks plus sitemap inclusion/uniqueness checks passed. git diff --check passed. Interactive browser QA has not been performed.
+- Publication: not committed, pushed or deployed yet. GitHub origin is https://github.com/uz95/Tool-Website.git on main. GitHub/Vercel authenticated publishing access has not been verified.
+- Search Console: user confirms setup exists. No authenticated session checked and no sitemap submission made.
+- AdSense: user confirms no account setup for this website yet. No approval or earnings claimed.
+- Automation: existing FastWebToolsHub daily growth updated to use this real project and this log; remains active at 09:00 America/Los_Angeles. Do not reapply the old ZIP or maintain the old staging copy.
+- Next task: connect/verify GitHub and Vercel publishing, publish the tested update, verify the live pages and sitemap, then inspect the existing Search Console property. Avoid creating another tool before this first delivery is reconciled and published.
+
+2026-10-27 - Publishing connection checked
+- Browser authentication confirmed for GitHub uz95, Vercel uz95s-projects and the existing Search Console URL-prefix property https://www.fastwebtoolshub.com/.
+- Vercel tool-website is already connected to uz95/Tool-Website, with main as production branch. Current live source is a789cbc.
+- Search Console performance, July 26 through October 25, 2026: 6 clicks, 4.14K impressions, 0.1% CTR, average position 69.3. Visible queries include percentage calculator (280 impressions), percentage calculator online (138), essay word counter (106), and webp to png (4 clicks, 40 impressions). Use these actual signals to prioritize improvements.
+- Local Git can read the remote using its OpenSSL backend, but cannot access/persist GitHub credentials in this execution account. The user agreed to run the publishing command in their own terminal. Do not claim a push or deployment until verified.
+- Sitemap checked: /sitemap.xml already submitted successfully, last read October 20, 2026, with 45 discovered pages. No resubmission needed before deployment.
+- Local commit not created: the app did not grant write access to .git. User needs to run add, commit and push in their own terminal. Production build and functional validation remain successful; no source files changed since validation except this work log.
