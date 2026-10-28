@@ -19,3 +19,30 @@ FASTWEBTOOLSHUB DAILY WORK LOG
 - Local Git can read the remote using its OpenSSL backend, but cannot access/persist GitHub credentials in this execution account. The user agreed to run the publishing command in their own terminal. Do not claim a push or deployment until verified.
 - Sitemap checked: /sitemap.xml already submitted successfully, last read October 20, 2026, with 45 discovered pages. No resubmission needed before deployment.
 - Local commit not created: the app did not grant write access to .git. User needs to run add, commit and push in their own terminal. Production build and functional validation remain successful; no source files changed since validation except this work log.
+
+2026-10-27 - First update published and verified
+- User pushed commit b2356ef6a474fe693c98eedfd32f48e6246e9862 to GitHub main; remote SHA verified.
+- Vercel production deployment B5YoxRMDb4EqGo4BQVukKxRdYsVB reports Ready for that exact commit.
+- Both new public URLs return HTTP 200 with expected page content. Live sitemap returns HTTP 200 and contains 48 URLs including both new pages.
+- Interactive browser checks passed for sentence case and title case on the published tool.
+- Refreshed sitemap.xml submitted through the authenticated Search Console property; Google displayed Sitemap submitted successfully. This confirms submission, not indexing. Screenshot saved in work/sitemap-submitted.png.
+- Scheduled daily work remains active. Git publishing from this chat still needs credential/write access; the user's own terminal push succeeded. Do not promise fully automatic publication until agent publishing access is tested.
+- Next task: use the actual Search Console queries above to improve existing percentage-calculator/word-counter pages and choose the next useful related tool and original guide. Monitor discovery/indexing of the first update and audit content/privacy/consent before any AdSense application.
+
+2026-10-27 - Existing unindexed pages audited at user request
+- Report dated October 22 lists 11 Crawled - currently not indexed and 10 Discovered - currently not indexed. Full affected URL queue saved in INDEXING-QUEUE.json.
+- All 21 URLs return HTTP 200. None exposes a robots meta noindex or X-Robots-Tag restriction. robots.txt allows crawling. All 21 are in the already submitted live sitemap. These checks do not establish content quality or guarantee indexing.
+- Four URLs lacked self-canonical metadata and unique page metadata: ai-caption-generator and the resize-images, convert-webp-to-png and estimate-youtube-earnings blog guides. Added metadata for the three guides and a server layout for the client caption page. The caption description honestly calls its outputs templates. These changes are LOCAL ONLY and require publication.
+- Validation: production build passed and all four generated HTML files contain their intended canonical URLs. git diff --check passed.
+- Request Indexing for image-resizer was attempted twice. First failed with a Google submission error and inability to connect to reCAPTCHA; after reload the retry also failed. ZERO individual indexing requests confirmed accepted. Do not report these pages as submitted or indexed. Screenshot: work/indexing-request-error.png. The Search Console tab is left open for the user.
+- PRIORITY NEXT: publish the four tested metadata fixes using the user's terminal (agent Git write/auth remains unavailable), verify them live, then resume pending URL inspections/indexing requests in INDEXING-QUEUE.json once Google's verification/submission service works. Respect quotas and any CAPTCHA confirmation requirements; do not repeat successful requests or misuse the restricted Indexing API. Then improve useful distinct content/internal linking where appropriate. Do not treat missing canonical metadata as the proven cause of exclusions.
+
+2026-10-28 - Daily service run manually at user's request
+- Reviewed AGENTS.md, existing changes, publishing history and indexing queue. Yesterday's four metadata fixes remain unpublished; preserved them.
+- Added /tools/percentage-change-calculator and original companion article /blog/how-to-calculate-percentage-change, based on verified percentage-calculator query interest. The existing percentage tool calculates a percentage of a number; the new tool compares two values and explains the difference.
+- Tool supports positive original values, decimal inputs, increase/decrease/no-change results, displayed formula, worked example and clear/reset controls. Zero and negative originals are explicitly rejected rather than giving misleading growth percentages. No new dependency or server data collection added.
+- Linked the new pages from Tools, Calculators and Blog. Sitemap generation now includes 50 static URLs.
+- Validation: 20 calculation/input checks passed; production build completed all 55 generated outputs; interactive browser checks verified 80 to 100 equals 25% increase and zero-baseline validation. Preview running locally at http://127.0.0.1:3015/tools/percentage-change-calculator. Screenshot in work/percentage-change-preview-2026-10-28.png.
+- Google overview still displayed 24 indexed and 21 not indexed pages. Retried Request Indexing for image-resizer today; Google again displayed submission failure and could not connect to reCAPTCHA. No individual indexing request confirmed accepted. Updated INDEXING-QUEUE.json and saved error screenshot in work/indexing-error-2026-10-28.png. Do not endlessly repeat this failing flow or bypass verification.
+- Publication: all today's additions and yesterday's metadata fixes remain local, not committed/pushed/deployed by the agent. Git repository write access was previously denied; user's terminal publishing step remains required. Do not claim fully automatic daily publication.
+- NEXT: user publishes the reviewed current changes; verify Vercel/live tool, article, four canonical fixes and 50-URL sitemap. Then resume eligible pending indexing requests when Google's verification service is available, without claiming submission equals indexing. Avoid another new tool today or regenerating this content on a repeated manual run.

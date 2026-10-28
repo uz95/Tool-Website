@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "How to Convert WEBP to PNG Online",
+  description: "Learn when to convert WEBP images to PNG and follow the steps to create a PNG image using the browser-based converter.",
+  alternates: { canonical: "https://www.fastwebtoolshub.com/blog/how-to-convert-webp-to-png" },
+};
+
 export default function WebpToPngBlogPage() {
   return (
     <main className="min-h-screen bg-slate-950 px-6 py-16 text-white">

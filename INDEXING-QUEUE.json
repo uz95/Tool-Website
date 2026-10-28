@@ -1,0 +1,158 @@
+{
+  "checkedOn": "2026-10-27",
+  "reportLastUpdated": "2026-10-22",
+  "sitemapSubmission": "Previously confirmed successful; all 21 affected URLs present in live sitemap",
+  "individualRequestsAccepted": 0,
+  "blocker": "Image resizer request retried October 28: Google again reported failure to submit and inability to connect to reCAPTCHA. No individual request confirmed accepted.",
+  "pages": [
+    {
+      "url": "https://www.fastwebtoolshub.com/tools/youtube-money-calculator",
+      "googleStatus": "Crawled - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/tools/svg-to-png",
+      "googleStatus": "Crawled - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/tools/image-tools",
+      "googleStatus": "Crawled - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/tools/rotate-image",
+      "googleStatus": "Crawled - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/tools/png-to-jpg",
+      "googleStatus": "Crawled - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/tools/jpg-to-png",
+      "googleStatus": "Crawled - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/tools/blur-image",
+      "googleStatus": "Crawled - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/tools/crop-image",
+      "googleStatus": "Crawled - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/tools/image-resizer",
+      "googleStatus": "Crawled - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false,
+      "lastRequestAttempt": "2026-10-28: failed, reCAPTCHA service connection error"
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/tools/ai-caption-generator",
+      "googleStatus": "Crawled - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": true
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/blog/how-to-resize-images-without-losing-quality",
+      "googleStatus": "Crawled - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": true
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/blog/how-to-blur-images-online",
+      "googleStatus": "Discovered - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/blog/how-to-compress-images-for-faster-websites",
+      "googleStatus": "Discovered - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/blog/how-to-convert-webp-to-png",
+      "googleStatus": "Discovered - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": true
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/blog/how-to-estimate-youtube-earnings",
+      "googleStatus": "Discovered - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": true
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/blog/how-to-rotate-images-online",
+      "googleStatus": "Discovered - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/tools/ai-tools",
+      "googleStatus": "Discovered - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/tools/calculators",
+      "googleStatus": "Discovered - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/tools/images-to-pdf",
+      "googleStatus": "Discovered - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/tools/pdf-to-images",
+      "googleStatus": "Discovered - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    },
+    {
+      "url": "https://www.fastwebtoolshub.com/tools/pdf-tools",
+      "googleStatus": "Discovered - currently not indexed",
+      "httpStatus": 200,
+      "requestStatus": "Not accepted / pending",
+      "metadataFixPendingDeployment": false
+    }
+  ],
+  "lastAttemptOn": "2026-10-28"
+}

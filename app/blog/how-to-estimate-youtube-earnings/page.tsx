@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "How to Estimate YouTube Earnings",
+  description: "Understand how views, RPM, niche and audience location affect a YouTube earnings estimate, and why actual earnings vary.",
+  alternates: { canonical: "https://www.fastwebtoolshub.com/blog/how-to-estimate-youtube-earnings" },
+};
+
 export default function YouTubeEarningsBlogPage() {
   return (
     <main className="min-h-screen bg-slate-950 px-6 py-16 text-white">

@@ -6,6 +6,7 @@ export const metadata = {
 };
 
 const tools = [
+  { title: "Percentage Change Calculator", href: "/tools/percentage-change-calculator" },
   { title: "Age Calculator", href: "/tools/age-calculator" },
   { title: "BMI Calculator", href: "/tools/bmi-calculator" },
   { title: "GPA Calculator", href: "/tools/gpa-calculator" },

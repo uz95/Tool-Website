@@ -1,4 +1,5 @@
 const posts = [
+  { title: "How to Calculate Percentage Change", description: "Worked increase and decrease examples, percentage points and common baseline mistakes.", href: "/blog/how-to-calculate-percentage-change", category: "Calculators" },
   { title: "How to Change Text Case Without Retyping", description: "Worked examples and practical checks for capitalization, acronyms and names.", href: "/blog/how-to-change-text-case", category: "Text Tools" },
   {
     title: "How to Convert WEBP to PNG Online",

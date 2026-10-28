@@ -22,6 +22,7 @@ const categories = [
 ];
 
 const tools = [
+  { title: "Percentage Change Calculator", description: "Compare two values to find percentage increase or decrease, with the formula explained.", category: "Calculator", href: "/tools/percentage-change-calculator" },
   { title: "Text Case Converter", description: "Convert uppercase, lowercase, sentence case and title case.", category: "Text Tool", href: "/tools/text-case-converter" },
   {
     title: "Age Calculator",

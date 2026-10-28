@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "How to Resize Images Without Losing Quality",
+  description: "Choose image dimensions, preserve aspect ratio and avoid unnecessary enlargement when resizing images for websites and uploads.",
+  alternates: { canonical: "https://www.fastwebtoolshub.com/blog/how-to-resize-images-without-losing-quality" },
+};
+
 export default function ResizeImagesBlogPage() {
   return (
     <main className="min-h-screen bg-slate-950 px-6 py-16 text-white">
